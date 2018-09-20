@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Models"
+                   namespace="Models">
+    <class name="Project">
+        <id name="Id">
+            <generator class="guid.comb" />
+        </id>
+        <property name="Name" />
+        <property name="Description" />
+        <property name="CreationDate" />
+        <property name="LaunchDate" />
+        <property name="LastUpdate" />
+        
+        <many-to-one name="Company" class="Company" column="CompanyCif" />
+        <many-to-one name="WorkMethodology" class="WorkMethodology" column="WorkMethodologyCode" />
+
+        <bag name="AssignedPersons" table="ProjectPerson" inverse="true">
+            <key column="ProjectId" />
+            <many-to-many class="Person" column="PersonId" />
+        </bag>
+    </class>
+</hibernate-mapping>

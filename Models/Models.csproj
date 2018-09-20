@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Mappings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Mappings\Company.hbm.xml" />
+    <None Remove="Mappings\Person.hbm.xml" />
+    <None Remove="Mappings\Sex.hbm.xml" />
+    <None Remove="Mappings\Sex.hbm %28copia%29.xml" />
+    <None Remove="Mappings\Company.hbm %28copia%29.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Company.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Person.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Sex.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Role.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Project.hbm.xml" />
+    <EmbeddedResource Include="Mappings\WorkMethodology.hbm.xml" />
+  </ItemGroup>
+</Project>

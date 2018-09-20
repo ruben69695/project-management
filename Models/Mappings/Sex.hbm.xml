@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Models"
+                   namespace="Models">
+    <class name="Sex">
+        <id name="Code" />
+        <property name="Description" />
+
+        <bag name="Persons" table="Person">
+            <key column="SexCode" />
+            <one-to-many class="Person" />
+        </bag>
+    </class>
+</hibernate-mapping>
