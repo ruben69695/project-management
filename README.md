@@ -3,9 +3,11 @@ This is a project, to develop a simple application for project management.
 
 # Getting Started
 1.  Clone the Repository
-2.  Open the Project with Visual Studio or Visual Studio Code
-3.	Try to compile it
-4.  Give me your public IP to allow you to access to the SQL Server on the cloud.
+2.  Install .NET Core Runtime 2.1
+3.  Open the Project with Visual Studio or Visual Studio Code
+4.	Compile
+5.  Give me your public IP to allow you to access to the SQL Server on the cloud.
+6.  Happy coding
 
 # Backend
 Using the power of .NET to develop the full backend of the application, all the libraries are using .NET Standard to make the backend fully crossplatform. Don't worry if you use the libraries with Linux, Mac or Windows it just works if you have .NET Core 2.1 Runtime installed on your machine.
