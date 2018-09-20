@@ -1,5 +1,6 @@
-# Project Management
 [![Build Status](https://travis-ci.org/ruben69695/project-management.svg?branch=master)](https://travis-ci.org/ruben69695/project-management)
+
+# Project Management
 This is a project, to develop a simple application for project management.
 
 # Getting Started
