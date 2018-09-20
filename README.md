@@ -1,5 +1,5 @@
-# Project Managment
-This is a project, to develop a simple application for project managment.
+# Project Management
+This is a project, to develop a simple application for project management.
 
 # Backend
 Using the power of .NET to develop the full backend of the application, all the libraries are using .NET Standard to make the backend fully crossplatform. Don't worry if you use the libraries with Linux, Mac or Windows it just works if you have .NET Core 2.1 Runtime installed on your machine.
