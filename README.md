@@ -11,5 +11,6 @@ In a near future, the principal idea, is make a first look with WPF technology, 
 - .NET Standard
 - MSTests
 - Nhibernate
+- Azure
 - SQL Server 2016
 - WPF
