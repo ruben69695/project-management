@@ -19,5 +19,9 @@
             <key column="ProjectId" />
             <many-to-many class="Person" column="PersonId" />
         </bag>
+        <bag name="Tasks" table="Task">
+            <key column="ProjectId" />
+            <one-to-many class="Task" />
+        </bag>
     </class>
 </hibernate-mapping>

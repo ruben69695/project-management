@@ -21,5 +21,6 @@
     <EmbeddedResource Include="Mappings\Role.hbm.xml" />
     <EmbeddedResource Include="Mappings\Project.hbm.xml" />
     <EmbeddedResource Include="Mappings\WorkMethodology.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Task.hbm.xml" />
   </ItemGroup>
 </Project>
