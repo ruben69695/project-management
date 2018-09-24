@@ -13,5 +13,7 @@ namespace Models
         public virtual DateTime? LaunchDate { get; set; } = null;
         public virtual DateTime? LastUpdate { get; set; } = null;
         public virtual List<Person> AssignedPersons { get; set; }
+        public virtual List<Task> Tasks { get; set; }
+
     }
 }

@@ -12,5 +12,6 @@ namespace Models
         public virtual Company Company { get; set; }
         public virtual Role Role { get; set; }
         public virtual List<Project> AssignedProjects { get; set; }
+        public virtual List<Task> AssignedTasks { get; set; }
     }
 }

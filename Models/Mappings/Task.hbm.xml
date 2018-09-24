@@ -9,9 +9,9 @@
         <property name="Title" />
         <property name="Description" />
         <property name="CreationDate" />
-        <property name="CreationDate" />
         <property name="ModifiedDate" />
-        
+        <property name="EndDate" />
+        <property name="Status" type="TaskStatus" />
         
         <many-to-one name="Project" class="Project" column="ProjectId" />
         <bag name="AssignedPersons" table="TaskPerson" inverse="true">
