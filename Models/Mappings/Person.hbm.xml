@@ -16,5 +16,9 @@
             <key column="PersonId" />
             <many-to-many class="Project" column="ProjectId" />
         </bag>
+        <bag name="AssignedTasks" table="TaskPerson">
+            <key column="PersonId" />
+            <many-to-many class="Task" column="TaskId" />
+        </bag>
     </class>
 </hibernate-mapping>
