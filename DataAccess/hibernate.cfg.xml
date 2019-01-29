@@ -5,7 +5,7 @@
     <property name="dialect">NHibernate.Dialect.MsSql2012Dialect</property>
     <property name="connection.driver_class">NHibernate.Driver.SqlClientDriver</property>
     <!-- <property name="connection.connection_string">Server=tcp:192.168.1.42,1433;Database=PROJECTMANAGMENT_DB;User ID=sa;Password=ruben123</property> -->
-    <property name="connection.connection_string">Server=tcp:educem2x3.database.windows.net,1433;Initial Catalog=PROJECTMANAGMENTDB;Persist Security Info=False;User ID=ruben69695;Password=Ruben012369;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</property>
+    <property name="connection.connection_string">Server=tcp:[Server],[PORT];Initial Catalog=PROJECTMANAGMENTDB;Persist Security Info=False;User ID=[USER];Password=[PASS];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</property>
     <property name="show_sql">true</property>
   </session-factory>
 </hibernate-configuration>
