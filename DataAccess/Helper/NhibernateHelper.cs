@@ -19,7 +19,7 @@ namespace DataAccess.Helper
                     configuration.Configure();
                     configuration.AddAssembly(typeof(Person).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
-                    new NHibernate.Tool.hbm2ddl.SchemaUpdate(configuration).Execute(false, true);
+                    new NHibernate.Tool.hbm2ddl.SchemaExport(configuration).Create(false, true);
                 }
                 return _sessionFactory;
             }

@@ -6,7 +6,7 @@ using DataAccess.Helper;
 
 namespace ProjectManagment.Test.DataAccess.Helper
 {
-    [TestClass]
+    //[TestClass]
     public class HelperTests
     {
         private ISession _session;
