@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{55703C07-442A-424C-9CD8-577B7E1D2C0D}"
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{205A3BCE-2F5D-4855-9EA0-27105A1DE862}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{0D3ED685-5F42-4F30-B691-1C2C42F5112D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators", "Validators\Validators.csproj", "{FF610988-62B0-484B-A739-127984CD55A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibraries", "SharedLibraries\SharedLibraries.csproj", "{7F049712-BA20-4625-B3F3-544D03F6B624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,5 +47,13 @@ Global
 		{0D3ED685-5F42-4F30-B691-1C2C42F5112D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D3ED685-5F42-4F30-B691-1C2C42F5112D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D3ED685-5F42-4F30-B691-1C2C42F5112D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF610988-62B0-484B-A739-127984CD55A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF610988-62B0-484B-A739-127984CD55A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF610988-62B0-484B-A739-127984CD55A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF610988-62B0-484B-A739-127984CD55A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F049712-BA20-4625-B3F3-544D03F6B624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F049712-BA20-4625-B3F3-544D03F6B624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F049712-BA20-4625-B3F3-544D03F6B624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F049712-BA20-4625-B3F3-544D03F6B624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

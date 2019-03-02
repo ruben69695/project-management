@@ -5,25 +5,37 @@ using Models;
 using Services.Helpers;
 using Services.Interfaces;
 using System.Linq;
+using SharedLibraries.Errors.Interfaces;
+using Validators.Interfaces;
+
 namespace Services
 {
     public class ProjectService : IProjectService
     {
-        private readonly IProjectRepository _dataAccess;
+        private readonly IProjectRepository _repository;
+        private readonly IProjectValidator _validator;
 
-        public ProjectService(IProjectRepository repository)
+        public ProjectService(IProjectRepository repository, IProjectValidator validator)
         {
-            _dataAccess = repository;
+            _repository = repository;
+            _validator = validator;
         }
 
-        public event EventHandler<ServiceError> NotifyError;
+        public event EventHandler<IValidationResult> NotifyError;
 
         public bool Create(Project item)
         {
             if (item == null)
                 throw new InvalidOperationException("The item can't be null");
 
-            return _dataAccess.Create(item);
+            var created = false;
+            var validationResult = _validator.Validate(item);
+            if (validationResult.HasError)
+                NotifyError?.Invoke(this, validationResult);
+            else
+                created = _repository.Create(item);
+
+            return created;
         }
 
         public bool Delete(Project item)
@@ -31,7 +43,7 @@ namespace Services
             if (item == null)
                 throw new InvalidOperationException("The item can't be null");
 
-            return _dataAccess.Delete(item);
+            return _repository.Delete(item);
         }
 
         public IEnumerable<Project> GetBetweenDates(DateTime dateOne, DateTime dateTwo)
@@ -39,7 +51,7 @@ namespace Services
             if (dateOne > dateTwo)
                 throw new InvalidOperationException("Invalid, dateOne can't be greater than dateTwo");
 
-            return _dataAccess.GetBetweenDates(dateOne, dateTwo);
+            return _repository.GetBetweenDates(dateOne, dateTwo);
         }
 
         public IEnumerable<Project> GetByCompany(string companyCif)
@@ -47,12 +59,12 @@ namespace Services
             if (string.IsNullOrWhiteSpace(companyCif))
                 throw new InvalidOperationException("The companyCif can't be null or empty");
 
-            return _dataAccess.GetByCompany(companyCif);
+            return _repository.GetByCompany(companyCif);
         }
 
         public IEnumerable<Project> GetByCreationDate(DateTime creationDate)
         {
-            return _dataAccess.GetByCreationDate(creationDate);
+            return _repository.GetByCreationDate(creationDate);
         }
 
         public Project GetById(Guid id)
@@ -60,12 +72,12 @@ namespace Services
             if (id == null)
                 throw new InvalidOperationException("Id can't be null");
 
-            return _dataAccess.GetById(id);
+            return _repository.GetById(id);
         }
 
         public IEnumerable<Project> GetByLaunchDate(DateTime launchDate)
         {
-            return _dataAccess.GetByLaunchDate(launchDate);
+            return _repository.GetByLaunchDate(launchDate);
         }
 
         public IEnumerable<Project> GetByName(string name)
@@ -73,7 +85,7 @@ namespace Services
             if (string.IsNullOrWhiteSpace(name))
                 throw new InvalidOperationException("The name can't be null or empty");
 
-            return _dataAccess.GetByName(name);
+            return _repository.GetByName(name);
         }
 
         public IEnumerable<Project> GetByWorkMethodology(string workMethodologyCode)
@@ -81,12 +93,12 @@ namespace Services
             if (string.IsNullOrWhiteSpace(workMethodologyCode))
                 throw new InvalidOperationException("The workMethodologyCode can't be null or empty");
 
-            return _dataAccess.GetByWorkMethodology(workMethodologyCode);
+            return _repository.GetByWorkMethodology(workMethodologyCode);
         }
 
         public IEnumerable<Project> GetList()
         {
-            return _dataAccess.Get().ToArray();
+            return _repository.Get().ToArray();
         }
 
         public bool Update(Project item)
@@ -94,7 +106,14 @@ namespace Services
             if (item == null)
                 throw new InvalidOperationException("The item can't be null");
 
-            return _dataAccess.Update(item);
+            var updated = false;
+            var validationResult = _validator.Validate(item);
+            if (validationResult.HasError)
+                NotifyError?.Invoke(this, validationResult);
+            else
+                updated = _repository.Update(item);
+
+            return updated;
         }
     }
 }

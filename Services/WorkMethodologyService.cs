@@ -5,6 +5,7 @@ using DataAccess.Repository.Interfaces;
 using Models;
 using Services.Helpers;
 using Services.Interfaces;
+using SharedLibraries.Errors.Interfaces;
 
 namespace Services
 {
@@ -17,7 +18,7 @@ namespace Services
             _dataAccess = repository;
         }
 
-        public event EventHandler<ServiceError> NotifyError;
+        public event EventHandler<IValidationResult> NotifyError;
 
         public bool Create(WorkMethodology item)
         {
@@ -54,6 +55,11 @@ namespace Services
                 throw new InvalidOperationException("The item can't be null");
 
             return _dataAccess.Update(item);
+        }
+
+        public ServiceError Validate(WorkMethodology data)
+        {
+            throw new NotImplementedException();
         }
     }
 }
