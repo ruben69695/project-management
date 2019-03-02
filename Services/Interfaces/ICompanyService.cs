@@ -4,7 +4,7 @@ using Services.Helpers.Interfaces;
 
 namespace Services.Interfaces
 {
-    public interface ICompanyService : IMainService<Company>, IErrorNotifier
+    public interface ICompanyService : IMainService<Company>
     {
         Company GetByCif(string cif);
         IEnumerable<Company> GetByName(string name);

@@ -5,16 +5,22 @@ namespace Services.Helpers
 {
     public class ServiceError
     {
-        private readonly Dictionary<string, string> _errorMessages;
+        private readonly Dictionary<int, string> _errorMessages;
 
-        public bool Error { get => _errorMessages.Count > 0; }
+        public bool HasError => _errorMessages.Count > 0;
 
         public ServiceError()
         {
-            _errorMessages = new Dictionary<string, string>();
+            _errorMessages = new Dictionary<int, string>();
         }
 
-        public string this[string key]
+        private ServiceError(ServiceError oldError, int newNumError, string newErrorDescription)
+        {
+            _errorMessages = oldError._errorMessages;
+            _errorMessages.Add(newNumError, newErrorDescription);
+        }
+
+        public string this[int key]
         {
             get 
             {
@@ -23,6 +29,11 @@ namespace Services.Helpers
 
                 return "";
             }
+        }
+
+        public ServiceError AddError(int numError, string description)
+        {
+            return new ServiceError(this, numError, description);
         }
     }
 }
